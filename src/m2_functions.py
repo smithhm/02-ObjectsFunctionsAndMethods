@@ -22,6 +22,8 @@ import rosegraphics as rg
 
 def main():
     print(right_triangle())
+    turtle('blue', 2)
+    turtle('pink', 30)
 
     """
     TESTS the functions that you will write below.
@@ -49,7 +51,7 @@ def right_triangle():
     return c
 
 ###############################################################################
-# TODO: 4a.  Define a function immediately below this _TODO_.
+# DONE: 4a.  Define a function immediately below this _TODO_.
 #   It takes two arguments:
 #     -- a string that represents a color (e.g. 'red')
 #     -- a positive integer that represents the thickness of a Pen.
@@ -71,14 +73,27 @@ def right_triangle():
 #
 #   You may name the function and its parameters whatever you wish.
 #
-# TODO: 4b.  In main, CALL your function at least TWICE (with different values
+# DONE: 4b.  In main, CALL your function at least TWICE (with different values
 #   for the arguments) to test whether you defined the function correctly.
 #
 ###############################################################################
 
 
+window = rg.TurtleWindow()
+
+
+def turtle(a, b):
+    ben = rg.SimpleTurtle()
+    ben.pen = rg.Pen('green', b)
+    ben.forward(100)
+    ben.speed = 5
+    tulip = rg.SimpleTurtle()
+    tulip.pen = rg.Pen(a, 5)
+    tulip.backward(100)
+    tulip.speed = 5
+
 ###############################################################################
-# TODO: 5.
+# DONE: 5.
 #   COMMIT-and-PUSH your work (after changing this TO-DO to DONE).
 #
 #   As a reminder, here is how you should do so:
@@ -102,4 +117,9 @@ def right_triangle():
 # -----------------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
 # -----------------------------------------------------------------------------
+
+
 main()
+
+
+window.close_on_mouse_click()
